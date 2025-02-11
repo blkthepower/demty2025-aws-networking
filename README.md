@@ -178,6 +178,7 @@ Create a Python virtual environment and install the following:
 ```
 pip install Flask
 pip install flask-cors
+pip install mysql-connector-python
 ```
 
 **Create API**
@@ -186,20 +187,35 @@ sudo vi /home/ubuntu/main.py
 ```
 
 The content should be the following:
+*Keep in mind that this API is a simple demo and that any sensible info should be stored safely as secrets or env variables.*
 
 ```python
 from flask import Flask, jsonify
-from flask_cors import CORS  # <--- IMPORTANTE
+from flask_cors import CORS
+import mysql.connector
+import os
 
-app = Flask(__name__)
-CORS(app)  # <--- Habilita CORS para permitir peticiones desde el navegador
+app = Flask(_name_)
+CORS(app)
 
-@app.route('/api/hello', methods=['GET'])
-def hello():
-    return jsonify({'message': 'Hola Mundo desde la API privada'}), 200
+def get_db_connection():
+    return mysql.connector.connect(
+        host=os.env["DB_HOST"]",
+        user=os.env["DB_USER"],
+        password=os.env["DB_PASS"],
+        database=os.env["DB_NAME"]
+    )
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+@app.route('/api/usuarios', methods=['GET'])
+def obtener_usuarios():
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM empleados  LIMIT 5;")
+    usuarios = cursor.fetchall()
+    conn.close()
+
+if _name_ == '_main_':
+    app.run(host='0.0.0.0', port=8080)
 ```
 
 **Update NGINX to serve our API**

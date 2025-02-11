@@ -12,7 +12,8 @@ The first step is to create a new VPC. This VPC will serve as the main container
 
 When creating the VPC, it's necessary to select the option `VPC and more`, to also create the routing tables, the public and private subnets and the Internet Gateway.
 
--- IMagen de vpc
+![Imagen creacion vpc](https://github.com/user-attachments/assets/9c2131e0-f9b5-4cd7-bbed-4c3a85dae0fe)
+
 
 -- imagen de preview
 

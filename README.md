@@ -2,9 +2,12 @@
 
 The following document describes the process to setup a public webpage that connects to a private backend.
 
+*The proof of AWS courses can be found in the directory `aws_courses`*
+
 The resulting network will look something like this:
 
-IMagen de diagrana
+![Diagrama VPC](https://github.com/user-attachments/assets/fe2739c6-6e62-4a0a-81a6-65e8dff99ca3)
+
 
 **1. VPC, Subnet, Routing table and Internet Gateway**
 
@@ -12,10 +15,11 @@ The first step is to create a new VPC. This VPC will serve as the main container
 
 When creating the VPC, it's necessary to select the option `VPC and more`, to also create the routing tables, the public and private subnets and the Internet Gateway.
 
+**VPC Creation**
 ![Imagen creacion vpc](https://github.com/user-attachments/assets/9c2131e0-f9b5-4cd7-bbed-4c3a85dae0fe)
 
-
--- imagen de preview
+**Resulting VPC Preview**
+![Preview VPC](https://github.com/user-attachments/assets/c8dc9770-a8b3-49e9-b3f4-1fa5eab43f83)
 
 **2. Security Groups**
 
@@ -52,13 +56,12 @@ Once the security groups are ready, we can now create 2 new EC2 instances, a pub
 
 When creating the instances, its necessary to select the newly created VPC and the existing security groups, just make sure one instance has the private SG and the other one has the public SG.
 
---IMAGEN NETWORKING EC2
-
+**Network configuration in EC2**
+![Imagen networking ec2](https://github.com/user-attachments/assets/48962eb7-b726-4f14-bd6c-a452a9ae7561)
 
 **Key pairs**
 
 Each EC2 should generate a new key pair in `.pem` format to be able to connect via SSH to both of them.
-
 
 **IP Address**
 
@@ -230,3 +233,11 @@ ps aux | grep python
 ```
 sudo systemctl restart nginx
 ```
+
+** Working API **
+![API](https://github.com/user-attachments/assets/25bf633f-c68e-4e33-92fe-235e627759b7)
+
+** Public EC2 consuming API **
+![Consuming API from public EC2](https://github.com/user-attachments/assets/c26b8db9-874b-437c-854b-ba5c5ec4ff27)
+
+

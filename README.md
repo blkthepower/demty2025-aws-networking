@@ -57,6 +57,7 @@ Once the security groups are ready, we can now create 2 new EC2 instances, a pub
 When creating the instances, its necessary to select the newly created VPC and the existing security groups, just make sure one instance has the private SG and the other one has the public SG.
 
 **Network configuration in EC2**
+
 ![Imagen networking ec2](https://github.com/user-attachments/assets/48962eb7-b726-4f14-bd6c-a452a9ae7561)
 
 **Key pairs**
@@ -187,6 +188,7 @@ sudo vi /home/ubuntu/main.py
 ```
 
 The content should be the following:
+
 *Keep in mind that this API is a simple demo and that any sensible info should be stored safely as secrets or env variables.*
 
 ```python

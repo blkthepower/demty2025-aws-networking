@@ -16,9 +16,11 @@ The first step is to create a new VPC. This VPC will serve as the main container
 When creating the VPC, it's necessary to select the option `VPC and more`, to also create the routing tables, the public and private subnets and the Internet Gateway.
 
 **VPC Creation**
+
 ![Imagen creacion vpc](https://github.com/user-attachments/assets/9c2131e0-f9b5-4cd7-bbed-4c3a85dae0fe)
 
 **Resulting VPC Preview**
+
 ![Preview VPC](https://github.com/user-attachments/assets/c8dc9770-a8b3-49e9-b3f4-1fa5eab43f83)
 
 **2. Security Groups**
@@ -129,7 +131,7 @@ This should be the content of the file
     <h1>Hola desde Nginx</h1>
     <p id="mensaje">Cargando mensaje desde la API...</p>
 <script> 
-    fetch("http://52.53.126.198/api/hello")  // Ahora usa la IP pública de la instancia pública
+    fetch("http://52.53.126.198/api/usarios") 
     .then(response => response.json())
     .then(data => {
         document.getElementById("mensaje").innerText = data.message;

@@ -252,10 +252,12 @@ ps aux | grep python
 sudo systemctl restart nginx
 ```
 
-** Working API **
+**Working API**
+
 ![API](https://github.com/user-attachments/assets/25bf633f-c68e-4e33-92fe-235e627759b7)
 
-** Public EC2 consuming API **
+**Public EC2 consuming API**
+
 ![Consuming API from public EC2](https://github.com/user-attachments/assets/c26b8db9-874b-437c-854b-ba5c5ec4ff27)
 
 
